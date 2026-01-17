@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador Ar - Departamento Fiscal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Gerenciador Ar</h1>
+            <nav>
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/departamento/{{ departamento_id }}" class="nav-link active">Departamento Fiscal</a>
+            </nav>
+        </header>
+
+        <main class="departamento">
+            <div class="breadcrumb">
+                <a href="/">Dashboard</a> > 
+                <span id="departamento-nome">Departamento Fiscal</span>
+            </div>
+
+            <h2 id="departamento-titulo">Departamento Fiscal</h2>
+            
+            <div class="etapas-grid" id="etapas-container"></div>
+        </main>
+    </div>
+
+    <script>
+        const departamentoId = {{ departamento_id }};
+    </script>
+    <script src="{{ url_for('static', filename='js/departamento.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador Ar - Etapa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Gerenciador Ar</h1>
+            <nav>
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/departamento/1" class="nav-link">Departamento Fiscal</a>
+            </nav>
+        </header>
+
+        <main class="etapa">
+            <div class="breadcrumb" id="breadcrumb"></div>
+
+            <h2 id="etapa-nome">Carregando...</h2>
+            <div class="responsavel-info">
+                <strong>Responsável:</strong> <span id="responsavel-nome"></span>
+            </div>
+            
+            <div class="tarefas-container">
+                <h3>Tarefas</h3>
+                <div id="tarefas-lista" class="tarefas-lista"></div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const etapaId = {{ etapa_id }};
+    </script>
+    <script src="{{ url_for('static', filename='js/etapa.js') }}"></script>
+</body>
+</html>

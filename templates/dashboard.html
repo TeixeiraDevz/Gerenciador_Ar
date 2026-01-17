@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador Ar - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Gerenciador Ar</h1>
+            <nav>
+                <a href="/" class="nav-link active">Dashboard</a>
+                <a href="/departamento/1" class="nav-link">Departamento Fiscal</a>
+            </nav>
+        </header>
+
+        <main class="dashboard">
+            <h2>Dashboard Geral - Departamento Fiscal</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total de Tarefas</h3>
+                    <p class="stat-number" id="total-tarefas">0</p>
+                    <p class="stat-subtitle">Todas as tarefas do departamento</p>
+                </div>
+                <div class="stat-card success">
+                    <h3>Concluídas</h3>
+                    <p class="stat-number" id="tarefas-concluidas">0</p>
+                    <p class="stat-subtitle" id="porcentagem-concluidas">0%</p>
+                </div>
+                <div class="stat-card warning">
+                    <h3>Pendentes</h3>
+                    <p class="stat-number" id="tarefas-pendentes">0</p>
+                    <p class="stat-subtitle">Aguardando conclusão</p>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <h3>Resumo por Responsável</h3>
+                <div id="resumo-responsaveis" class="responsaveis-grid"></div>
+            </div>
+
+            <div class="etapas-resumo">
+                <h2>Resumo por Etapa</h2>
+                <div id="resumo-etapas" class="etapas-grid"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "Gerenciador Ar",
+  "description": "Sistema de gerenciamento de tarefas fiscais e contábeis",
+  "repository": "https://github.com/seu-usuario/gerenciador-ar",
+  "logo": "https://via.placeholder.com/150",
+  "keywords": ["python", "flask", "tarefas", "fiscal"],
+  "env": {
+    "SECRET_KEY": {
+      "description": "Chave secreta para sessões Flask",
+      "generator": "secret"
+    },
+    "FLASK_DEBUG": {
+      "description": "Modo debug do Flask",
+      "value": "False"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}

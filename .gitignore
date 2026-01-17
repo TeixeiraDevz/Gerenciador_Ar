@@ -1,0 +1,33 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+*.db
+*.sqlite
+*.sqlite3
+.DS_Store
+.vscode/
+.idea/
+*.log
+
+# Arquivos do usuário (fora do projeto)
+~/
+.cursor/
+*.xml
+.bash_history
+componentesSped.log
+argv.json
+ai-code-tracking.db
+.obsolete
+
+# Arquivos de teste
+test_imports.py
+
+# Arquivos de configuração local
+.env
+.env.local
