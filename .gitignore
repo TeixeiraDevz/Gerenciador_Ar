@@ -31,3 +31,6 @@ test_imports.py
 # Arquivos de configuração local
 .env
 .env.local
+
+# Vercel
+.vercel

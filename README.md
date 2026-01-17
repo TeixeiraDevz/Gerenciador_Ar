@@ -101,7 +101,36 @@ heroku config:set FLASK_DEBUG=False
 git push heroku main
 ```
 
-#### Opção 3: Railway
+#### Opção 3: Vercel (Recomendado para Serverless)
+
+Vercel é excelente para aplicações Flask com suporte a Python.
+
+1. **Instalar Vercel CLI** (opcional)
+   ```powershell
+   npm install -g vercel
+   ```
+
+2. **Deploy via Dashboard**
+   - Acesse https://vercel.com e faça login
+   - Clique em "Add New" → "Project"
+   - Conecte seu repositório GitHub/GitLab/Bitbucket
+   - Vercel detecta automaticamente o `vercel.json`
+   - Clique em "Deploy"
+
+3. **Deploy via CLI** (alternativa)
+   ```powershell
+   vercel login
+   vercel
+   vercel --prod
+   ```
+
+**Variáveis de Ambiente:**
+- `SECRET_KEY`: (gere uma chave secreta)
+- `FLASK_DEBUG`: `False`
+
+**Nota:** Vercel usa serverless functions. O arquivo `vercel.json` já está configurado.
+
+#### Opção 4: Railway
 
 1. Acesse https://railway.app
 2. Novo Projeto → Deploy from GitHub
