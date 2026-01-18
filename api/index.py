@@ -8,9 +8,9 @@ import sys
 root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, root_dir)
 
-# Importar o app Flask
-from app import app
+# IMPORTANTE:
+# No runtime do Vercel, exportar um objeto "handler" (que não seja função/classe esperada)
+# pode causar erro no vc__handler__python.py.
+# Para Flask, exportamos o objeto WSGI como "app".
 
-# Para Vercel Python, o Flask app deve ser exposto diretamente
-# O @vercel/python detecta automaticamente aplicações WSGI/Flask
-handler = app
+from app import app as app  # Vercel irá detectar o WSGI callable

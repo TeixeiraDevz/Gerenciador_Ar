@@ -1,7 +1,22 @@
 import sqlite3
 import os
 
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'gerenciador_ar.db')
+def _resolve_db_path() -> str:
+    # Permite override via env
+    env_path = os.environ.get("SQLITE_DB_PATH")
+    if env_path:
+        return env_path
+
+    # Em ambiente serverless (Vercel), o filesystem do código é read-only.
+    # /tmp é o local gravável (não persistente entre execuções frias).
+    if os.environ.get("VERCEL"):
+        return "/tmp/gerenciador_ar.db"
+
+    # Local/dev: cria o DB na raiz do projeto
+    return os.path.join(os.path.dirname(__file__), "..", "..", "..", "gerenciador_ar.db")
+
+
+DB_PATH = _resolve_db_path()
 
 def get_db_connection():
     conn = sqlite3.connect(DB_PATH)
