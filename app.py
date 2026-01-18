@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, send_from_directory
 from flask_cors import CORS
 import os
 
@@ -20,6 +20,11 @@ app.register_blueprint(dashboard_blueprint)
 app.register_blueprint(departamento_blueprint)
 app.register_blueprint(etapa_blueprint)
 app.register_blueprint(tarefa_blueprint)
+
+@app.get("/favicon.ico")
+def favicon():
+    # Evita 404 no Vercel (não é obrigatório; só remove ruído nos logs)
+    return ("", 204)
 
 # Inicializar banco de dados (com tratamento de erro)
 try:
